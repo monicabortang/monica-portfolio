@@ -89,11 +89,15 @@ const skills = [
 const certifications = [
   ['Generative AI Engineer', 'Coding Camp 2026 powered by DBS Foundation', '2026', '/images/generative-ai-engineer.png'],
   ['AWS AI Academy: Foundation Level', 'Amazon Web Services', '2026', '/images/aws-ai-academy.png'],
-  ['Prompt Engineering for Software Developers', 'DeepLearning.AI', '2026', '/images/prompt-engineering.png'],
+  ['Prompt Engineering for Software Developers', 'Dicoding', '2026', '/images/prompt-engineering.png'],
   ['Agentic AI Certified Foundations Associate', 'Oracle University', 'Sep 2026', '/images/cert-oracle-agentic.png'],
   ['Oracle AI Database Certified Foundations Associate', 'Oracle University', 'Sep 2026', '/images/cert-oracle-database.png'],
-  ['Building Gen AI Apps with Microsoft Azure', 'Microsoft Elevate', '2025', '/images/microsoft-azure.png'],
-  ['Cloud & Generative AI Fundamentals', 'IBM SkillsBuild', '2025', '/images/generative-ai-engineer.png'],
+  ['Building Gen AI Apps with Microsoft Azure', 'Dicoding', '2025', '/images/microsoft-azure.png'],
+  ['Cloud & Generative AI Fundamentals', 'Dicoding', '2025', '/images/generative-ai-engineer.png'],
+  ['DEL ARTIFICIAL INTELLIGENCE HACHATHON 2026', 'Hackathon', '2026', '/images/hackathon.webp'],
+  ['Asisten Matrikulasi dan Gasing', 'IT DEL', '2026', '/images/asmat.webp'],
+  ['Best Organization-PMB Promotion 2026', 'IT DEL', '2026', '/images/mpm.webp'],
+
 ]
 
 const roles = ['Frontend Development', 'Fullstack Web Apps', 'Mobile with Flutter', 'Generative AI']
@@ -422,20 +426,83 @@ function App() {
       </section>
 
       <section className="skills section-wrap section-pad" id="skills">
-        <SectionHeading eyebrow="WHAT I WORK WITH" title="Skills & technologies" description="A growing toolkit for designing, building, and improving digital products." />
-        <div className="marquee-wrap"><Marquee items={techRows[0]} /><Marquee items={techRows[1]} reverse /></div>
+        <SectionHeading
+          eyebrow="MY TOOLKIT"
+          title="Skills & technologies"
+          description="The tools and technologies I use to transform ideas into functional digital experiences."
+        />
+
         <div className="skills-grid">
           {skills.map((group, i) => {
             const Icon = group.icon
-            return <motion.div className="skill-card" key={group.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .08 }}>
-              <div className="skill-icon"><Icon size={21} /></div><h3>{group.title}</h3>
-              <div className="skill-tags">{group.items.map(item => <span key={item}>{item}</span>)}</div>
-            </motion.div>
+
+            return (
+              <motion.article
+                className="skill-card"
+                key={group.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <div className="skill-card-top">
+                  <div className="skill-icon">
+                    <Icon size={23} />
+                  </div>
+
+                  <span className="skill-index">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                <h3>{group.title}</h3>
+
+                <p className="skill-description">
+                  {[
+                    'Building responsive and accessible interfaces.',
+                    'Creating APIs and managing structured data.',
+                    'Developing mobile applications and workflows.',
+                    'Improving product quality and collaboration.',
+                  ][i]}
+                </p>
+
+                <div className="skill-tags">
+                  {group.items.map(item => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </motion.article>
+            )
           })}
         </div>
-      </section>
 
-      <GithubActivity />
+        <div className="tech-stack">
+          <div className="tech-stack-heading">
+            <div>
+              <span className="eyebrow">TECH STACK</span>
+              <h3>Tools I work with</h3>
+            </div>
+
+            <span className="tech-stack-count">
+              {String(techRows.flat().length).padStart(2, '0')} technologies
+            </span>
+          </div>
+
+          <div className="tech-stack-grid">
+            {techRows.flat().map(([name, ico]) => (
+              <div className="tech-stack-item" key={name}>
+                <img
+                  src={dev(ico)}
+                  alt=""
+                  loading="lazy"
+                />
+                <span>{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    
 
       <section className="projects section-wrap section-pad" id="projects">
         <SectionHeading eyebrow="SELECTED WORK" title="Things I’ve been building." description="A selection of academic and personal projects that reflect my learning journey." />

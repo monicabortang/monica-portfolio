@@ -511,3 +511,412 @@
 .mobile-project-preview .project-image{height:100%;border-radius:0}
 .modal-project-image .project-visual{height:330px;padding:20px}
 @media(max-width:680px){.project-visual{height:auto;padding:22px 12px}.project-image-wrap:not(.mobile-project-preview),.mobile-project-preview{width:94%;height:auto}.modal-project-image .project-visual{height:245px}}
+
+/* ========================================
+   PROJECT IMAGE SHOWCASE
+======================================== */
+
+.project-visual {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.95),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #edf4fc, #e2eaf5);
+}
+
+/* Preview desktop */
+.project-image-wrap:not(.mobile-project-preview) {
+  width: 100%;
+  max-width: 560px;
+  height: 210px;
+  margin: 0 auto;
+  padding: 22px 5px 5px;
+  border: 6px solid #202630;
+  border-radius: 14px;
+  background: #202630;
+  overflow: hidden;
+}
+
+.project-image-wrap:not(.mobile-project-preview)
+  .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+/* Preview mobile: showcase beberapa layar sekaligus */
+.project-image-wrap.mobile-project-preview {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(30, 45, 65, 0.16);
+  overflow: hidden;
+}
+
+.mobile-project-preview .project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  background: #fff;
+}
+
+.mobile-project-preview .image-overlay {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .project-visual {
+    height: 220px;
+    padding: 14px;
+  }
+
+  .project-image-wrap:not(.mobile-project-preview) {
+    height: 175px;
+  }
+
+  .project-image-wrap.mobile-project-preview {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+}
+
+/* ========================================
+   SKILLS & TECHNOLOGIES REDESIGN
+======================================== */
+
+.skills {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.skills .section-heading {
+  margin-bottom: 44px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  position: relative;
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 12px 32px rgba(15, 32, 53, 0.04);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: #8bbce8;
+  box-shadow: 0 22px 45px rgba(63, 143, 214, 0.12);
+}
+
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #3f8fd6;
+  background: #edf5fc;
+}
+
+.skill-index {
+  color: #a1acba;
+  font: 700 12px Manrope, sans-serif;
+  letter-spacing: 1px;
+}
+
+.skill-card h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font: 800 17px/1.4 Manrope, sans-serif;
+}
+
+.skill-description {
+  min-height: 58px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  color: var(--muted);
+  background: var(--bg);
+  font-size: 11px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.skill-tags span:hover {
+  color: #3f8fd6;
+  border-color: #8bbce8;
+  background: #edf5fc;
+}
+
+/* Technology showcase */
+
+.tech-stack {
+  margin-top: 64px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 12px 32px rgba(15, 32, 53, 0.04);
+}
+
+.tech-stack-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.tech-stack-heading h3 {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font: 800 22px Manrope, sans-serif;
+}
+
+.tech-stack-count {
+  padding: 8px 13px;
+  border-radius: 30px;
+  color: #3f8fd6;
+  background: #edf5fc;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tech-stack-item {
+  min-width: 0;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 8px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--bg);
+  transition: 0.25s ease;
+}
+
+.tech-stack-item:hover {
+  transform: translateY(-5px);
+  border-color: #8bbce8;
+  background: #edf5fc;
+}
+
+.tech-stack-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.tech-stack-item span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .skills {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 22px;
+  }
+
+  .skill-description {
+    min-height: 0;
+  }
+
+  .tech-stack {
+    margin-top: 36px;
+    padding: 20px;
+  }
+
+  .tech-stack-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .tech-stack-item {
+    min-height: 90px;
+  }
+}
+
+/* Dark mode */
+[data-theme='dark'] .skill-icon,
+[data-theme='dark'] .tech-stack-count {
+  color: #8bc5f5;
+  background: #1d3852;
+}
+
+[data-theme='dark'] .tech-stack-item {
+  background: #101b2b;
+  border-color: #293a50;
+}
+
+[data-theme='dark'] .tech-stack-item:hover {
+  background: #1d3852;
+  border-color: #527da4;
+}
+
+[data-theme='dark'] .skill-tags span {
+  background: #202f43;
+  border-color: #293a50;
+}
+
+[data-theme='dark'] .skill-tags span:hover {
+  color: #8bc5f5;
+  background: #1d3852;
+
+}
+
+/* ========================================
+   UNIFORM PROJECT PREVIEW
+======================================== */
+
+.project-visual {
+  width: 100%;
+  height: 420px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f1f5f9;
+  border-radius: 18px;
+}
+
+/* Samakan ukuran gambar website dan mobile */
+.project-image-wrap .project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Preview mobile: gambar showcase beberapa ponsel */
+.project-image-wrap.mobile-project-preview {
+  width: 100%;
+  height: 420px;
+  aspect-ratio: 16 / 10;
+  padding: 20px;
+  border: none;
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.mobile-project-preview .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Preview website */
+.project-image-wrap:not(.mobile-project-preview) {
+  width: 100%;
+  height: 420px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-visual,
+  .project-image-wrap.mobile-project-preview,
+  .project-image-wrap:not(.mobile-project-preview) {
+    height: 280px;
+    aspect-ratio: 4 / 3;
+    padding: 12px;
+  }
+}
