@@ -351,7 +351,7 @@ function App() {
       <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</button>
       <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
         {['About', 'Skills', 'Projects', 'Journey', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>{item}</a>)}
-        <a className="nav-cta" href="/Monica_Sitanggang_CV.pdf" target="_blank" rel="noreferrer">View CV <ArrowUpRight size={15} /></a>
+        <a className="nav-cta" href="/MonicaSitanggangCV.pdf" target="_blank" rel="noreferrer">View CV <ArrowUpRight size={15} /></a>
       </nav>
       <button
         className="theme-toggle"
