@@ -415,7 +415,7 @@ function App() {
               <div><dt>Study</dt><dd>D3 Information Technology, IT Del</dd></div>
               <div><dt>Focus</dt><dd>Frontend · Fullstack · Mobile</dd></div>
             </dl>
-            <a className="text-link" href="/Monica_Sitanggang_CV.pdf" target="_blank" rel="noreferrer">Read my CV <ArrowUpRight size={16} /></a>
+            <a className="text-link" href="/MonicaSitanggangCV.pdf" target="_blank" rel="noreferrer">Read my CV <ArrowUpRight size={16} /></a>
           </div>
           <div className="about-stats">
             <div className="stat-card"><strong>3.66</strong><span>GPA / 4.00</span></div>
